@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="catalog" />
+        <module name="notification" />
+        <module name="authentication" />
+        <module name="order" />
+        <module name="basket" />
+        <module name="config" />
+        <module name="admin" />
+      </profile>
+      <profile name="Annotation profile for HW03" enabled="true">
+        <sourceOutputDir name="../registeruser/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../registeruser/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="registration" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="admin" target="1.8" />
+      <module name="authentication" target="1.8" />
+      <module name="basket" target="1.8" />
+      <module name="catalog" target="1.8" />
+      <module name="config" target="1.8" />
+      <module name="HW03" target="1.5" />
+      <module name="notification" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="registration" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin" options="-parameters" />
+      <module name="authentication" options="-parameters" />
+      <module name="basket" options="-parameters" />
+      <module name="catalog" options="-parameters" />
+      <module name="config" options="-parameters" />
+      <module name="notification" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="registration" options="-parameters" />
+    </option>
+  </component>
+</project>
