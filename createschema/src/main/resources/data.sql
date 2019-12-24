@@ -1,3 +1,9 @@
+-- admin / passw0rd
+INSERT INTO oauth_client_details (client_id, client_secret, scope, authorized_grant_types, authorities, access_token_validity)
+VALUES ('admin', '$2y$12$Aa5ruejFpTeJzAXG7IoxYOtDfepTnXsrlGwsZV9KPfh6OAB4J9bb2', 'read,write', 'password,refresh_token,client_credentials', 'ROLE_CLIENT', 300);
+
+
+
 --
 -- страны
 --
@@ -5,6 +11,29 @@ insert into countries( id, code, name) values( 1, '643', 'РОССИЯ');
 insert into countries( id, code, name) values( 2, '840', 'США');
 insert into countries( id, code, name) values( 3, '276', 'ГЕРМАНИЯ');
 insert into countries( id, code, name) values( 4, '250', 'Франция');
+
+
+--
+-- пользователи пароль у всех 12345
+--
+insert into users( id, username, password, fio, phone, active) values( 1, 'admin@mail.ru', '$2a$10$j2tFtUiRohlLp8HMfXAcD.clyBy50LGR6ntj2yRMJWJb1L9J4vP8m', 'Admin',   '+7(921)123-48-11', true);
+INSERT INTO authorities (username, authority) VALUES ('admin@mail.ru', 'ROLE_USER');
+
+insert into users( id, username, password, fio, phone, active) values( 2, 'test2@mail.ru', '$2a$10$j2tFtUiRohlLp8HMfXAcD.clyBy50LGR6ntj2yRMJWJb1L9J4vP8m', 'Петров',   '+7(921)123-48-12', true);
+INSERT INTO authorities (username, authority) VALUES ('test2@mail.ru', 'ROLE_USER');
+
+insert into users( id, username, password, fio, phone, active) values( 3, 'test3@mail.ru', '$2a$10$j2tFtUiRohlLp8HMfXAcD.clyBy50LGR6ntj2yRMJWJb1L9J4vP8m', 'Сидоров',  '+7(921)123-48-13', true);
+INSERT INTO authorities (username, authority) VALUES ('test3@mail.ru', 'ROLE_USER');
+
+insert into users( id, username, password, fio, phone, active) values( 4, 'test4@mail.ru', '$2a$10$j2tFtUiRohlLp8HMfXAcD.clyBy50LGR6ntj2yRMJWJb1L9J4vP8m', 'Кузнецов', '+7(921)123-48-14', true);
+INSERT INTO authorities (username, authority) VALUES ('test4@mail.ru', 'ROLE_USER');
+
+insert into users( id, username, password, fio, phone, active) values( 5, 'test5@mail.ru', '$2a$10$j2tFtUiRohlLp8HMfXAcD.clyBy50LGR6ntj2yRMJWJb1L9J4vP8m', 'Лавров',   '+7(921)123-48-15', true);
+INSERT INTO authorities (username, authority) VALUES ('test5@mail.ru', 'ROLE_USER');
+
+insert into users( id, username, password, fio, phone, active) values( 6, 'test6@mail.ru', '$2a$10$j2tFtUiRohlLp8HMfXAcD.clyBy50LGR6ntj2yRMJWJb1L9J4vP8m', 'Козин',    '+7(921)123-48-16', true);
+INSERT INTO authorities (username, authority) VALUES ('test6@mail.ru', 'ROLE_USER');
+
 
 --
 -- города
@@ -51,10 +80,10 @@ insert into brands( id, name, description, country_id) values( 4, 'ВАЗ', '', 
 --
 -- категории
 --
-insert into categories( id, name) values( 1, 'Бытовая электроника');
-insert into categories( id, name) values( 2, 'Сотовые телефоны');
-insert into categories( id, name) values( 3, 'Книги');
-insert into categories( id, name) values( 4, 'Цифровые товары');
+insert into categories( id, code, name) values( 1, 'ELECTR', 'Бытовая электроника');
+insert into categories( id, code, name) values( 2, 'PHONES', 'Сотовые телефоны');
+insert into categories( id, code, name) values( 3, 'BOOKS', 'Книги');
+insert into categories( id, code, name) values( 4, 'DIGITAL', 'Цифровые товары');
 
 --
 -- товары
@@ -69,3 +98,5 @@ insert into goods( id, skud, name, description, smallpictureurl, largepictureurl
 values ( 4, 1, 'Сотовый телефон 1', 'Сотовый телефон', '', '', 2, 2 );
 insert into goods( id, skud, name, description, smallpictureurl, largepictureurl, category_id, brand_id)
 values ( 5, 1, 'Сотовый телефон 2', 'Сотовый телефон', '', '', 2, 2 );
+
+commit;

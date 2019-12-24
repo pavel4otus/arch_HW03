@@ -1,9 +1,11 @@
 package ru.pavel2107.arch.notification.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Service
 public class notificationServiceImpl implements NotificationService {
 
     private PushService  pushService;

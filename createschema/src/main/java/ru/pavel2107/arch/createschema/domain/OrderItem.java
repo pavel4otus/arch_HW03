@@ -1,4 +1,4 @@
-package ru.pavel2107.arch.basket.domain;
+package ru.pavel2107.arch.createschema.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
