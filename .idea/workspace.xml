@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88bb4a20-3e77-4ab0-856b-a7c254d9c297" name="Default Changelist" comment="" />
+    <list default="true" id="88bb4a20-3e77-4ab0-856b-a7c254d9c297" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/domain/GoodMoscow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/domain/GoodOthers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/domain/GoodSpb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/dto/GoodDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/repository/GoodGeoLocationRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/repository/GoodMoscowRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/repository/GoodOthersRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/repository/GoodSpbRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_2_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/service/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/service/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/service/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification/notification.iml" beforeDir="false" afterPath="$PROJECT_DIR$/notification/notification.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,18 +45,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1VLThNn5ftMdjTSKAAnls0Uvd66" />
   <component name="ProjectViewState">
@@ -48,15 +62,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577109827262" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/order/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/catalog/src/main/java/ru/pavel2107/arch/catalog/domain" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -65,18 +81,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.pavel2107.arch.catalog.domain" />
+      <recent name="ru.pavel2107.arch.catalog.repository" />
       <recent name="ru.pavel2107.arch.order.security" />
       <recent name="ru.pavel2107.arch.order.domain" />
       <recent name="ru.pavel2107.arch.order.repository" />
-      <recent name="ru.pavel2107.arch.basket.security" />
-      <recent name="ru.pavel2107.arch.notification.security" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\IdeaProjects\otus\ArchitectorPO\homeworks\arch_HW03\catalog\src\main\java\ru\pavel2107\arch\catalog\domain" />
       <recent name="D:\Java\IdeaProjects\otus\ArchitectorPO\homeworks\HW03\order\src\main\resources" />
       <recent name="C:\Pavel\Java\otus\ArchPO\HW03\basket\src\main\resources" />
       <recent name="C:\Pavel\Java\otus\ArchPO\HW03\order\src\main\java\ru\pavel2107\arch\order" />
       <recent name="C:\Pavel\Java\otus\ArchPO\HW03\basket\src\main\java\ru\pavel2107\arch\basket\service" />
-      <recent name="D:\Java\IdeaProjects\otus\ArchitectorPO\homeworks\HW03\registeruser\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -122,6 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="notification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.pavel2107.arch.notification.NotificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="order" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.pavel2107.arch.order.OrderApplication" />
@@ -140,16 +163,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -176,6 +189,7 @@
       <workItem from="1577031500012" duration="11185000" />
       <workItem from="1577106571308" duration="3200000" />
       <workItem from="1577131515713" duration="3738000" />
+      <workItem from="1577214234573" duration="7617000" />
     </task>
     <servers />
   </component>
@@ -191,10 +205,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577032390052" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1577132034003">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1577216592716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577132034003" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577216592716" />
     <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1577031814308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,16 +1,24 @@
 package ru.pavel2107.arch.catalog.service;
 
-import ru.pavel2107.arch.catalog.domain.Brand;
-import ru.pavel2107.arch.catalog.domain.Category;
-import ru.pavel2107.arch.catalog.domain.Good;
+import ru.pavel2107.arch.catalog.domain.*;
+import ru.pavel2107.arch.catalog.dto.GoodDto;
 
 import java.util.List;
 
 public interface GoodsService {
-    Good find(Long id);
-    List<Good> findByName(String name);
-    List<Good> findByCategory(Category category);
-    List<Good> findByBrand(Brand brand);
-    Good findBySkud(Long skud);
-    List<Good> findAll();
+    GoodDto find(Long id);
+    GoodDto find(City city, Long id);
+
+    List<GoodDto> findByName(String name);
+    List<GoodDto> findByName(City city, String name);
+
+    List<GoodDto> findByCategory(Category category);
+    List<GoodDto> findByCategory(City city, Category category);
+
+    List<GoodDto> findByBrand(Brand brand);
+    List<GoodDto> findByBrand(City city, Brand brand);
+
+    List<GoodDto> findAll();
+    List<GoodDto> findAll(City city);
+
 }
