@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.pavel2107.arch.catalog.domain.Brand;
 import ru.pavel2107.arch.catalog.domain.Category;
 import ru.pavel2107.arch.catalog.domain.Good;
+import ru.pavel2107.arch.catalog.dto.GoodDto;
 import ru.pavel2107.arch.catalog.service.BrandService;
 import ru.pavel2107.arch.catalog.service.CategoryService;
 import ru.pavel2107.arch.catalog.service.GoodsService;
@@ -27,8 +28,8 @@ public class CatalogController {
     }
 
     @GetMapping( value = "/microservices/v1/catalog", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Good> listGoods(){
-        List <Good> list = goodsService.findAll();
+    public List<GoodDto> listGoods(){
+        List <GoodDto> list = goodsService.findAll();
         return  list;
     }
 
@@ -39,22 +40,22 @@ public class CatalogController {
     }
 
     @GetMapping( value = "/microservices/v1/catalog/bycategory", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Good> listGoodsByCategory(@RequestParam Long categoryId){
+    public List<GoodDto> listGoodsByCategory(@RequestParam Long categoryId){
         Category category = categoryService.findById( categoryId);
-        List <Good> list = goodsService.findByCategory( category);
+        List <GoodDto> list = goodsService.findByCategory( category);
         return  list;
     }
 
     @GetMapping( value = "/microservices/v1/catalog/bybrand", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Good> listGoodsByBrand(@RequestParam Long brandId){
+    public List<GoodDto> listGoodsByBrand(@RequestParam Long brandId){
         Brand brand = brandService.findById( brandId);
-        List <Good> list = goodsService.findByBrand( brand);
+        List <GoodDto> list = goodsService.findByBrand( brand);
         return  list;
     }
 
     @GetMapping( value = "/microservices/v1/catalog/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Good get( @PathVariable( value = "id") Long id){
-        Good good = goodsService.find( id);
+    public GoodDto get( @PathVariable( value = "id") Long id){
+        GoodDto good = goodsService.find( id);
         return good;
     }
 }

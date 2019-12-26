@@ -34,13 +34,6 @@ public class BasketController {
         return basket;
     }
 
-    @PutMapping( value = "/microservices/v1/basket", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Order save( Principal principal, Order basket){
-        User user = findUser( principal);
-        Order saved = basketService.save( basket);
-        return saved;
-    }
-
     @PostMapping( value = "/microservices/v1/user/basket/additem", produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean addItem( Principal principal, Good good, Integer count){
         User user = findUser( principal);

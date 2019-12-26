@@ -22,7 +22,8 @@ public class BasketServiceImpl implements BasketService {
     //
     @Override
     public Order findBasket( User user){
-        return repository.findByUserAndHistory_Empty( user);
+        Order basket = repository.findByUserAndHistory_Empty( user);
+        return basket;
     }
 
     @Override

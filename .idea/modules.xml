@@ -5,10 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/HW03.iml" filepath="$PROJECT_DIR$/HW03.iml" />
       <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/authentication/authentication.iml" filepath="$PROJECT_DIR$/authentication/authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authentication/authentication.iml" filepath="$PROJECT_DIR$/authentication/authentication.iml" />
       <module fileurl="file://$PROJECT_DIR$/basket/basket.iml" filepath="$PROJECT_DIR$/basket/basket.iml" />
       <module fileurl="file://$PROJECT_DIR$/catalog/catalog.iml" filepath="$PROJECT_DIR$/catalog/catalog.iml" />
       <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/createschema/createschema.iml" filepath="$PROJECT_DIR$/createschema/createschema.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification/notification.iml" filepath="$PROJECT_DIR$/notification/notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/registration/registration.iml" filepath="$PROJECT_DIR$/registration/registration.iml" />
     </modules>
