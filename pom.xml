@@ -10,8 +10,11 @@
         <module>registration</module>
         <module>authentication</module>
         <module>admin</module>
+        <module>createschema</module>
+        <module>order</module>
         <module>basket</module>
         <module>notification</module>
+        <module>websocket</module>
     </modules>
 
     <groupId>ru.pavel2107.arch</groupId>

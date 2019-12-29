@@ -28,8 +28,4 @@ public class StatusHistory {
     @JoinColumn( name = "order_id")
     @JsonIgnore
     private Order order;
-
-    @ManyToOne
-    @JoinColumn( name = "address_id")
-    private Address address;
 }

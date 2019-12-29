@@ -9,7 +9,7 @@ import ru.pavel2107.arch.register.service.UserService;
 import java.util.List;
 
 @RestController
-public class UserController {
+public class   UserController {
 
     private UserService service;
 

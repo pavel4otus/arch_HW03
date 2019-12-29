@@ -1,15 +1,14 @@
-package ru.pavel2107.arch.authentication;
+package ru.pavel2107.arch.register;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@SpringBootApplication
 @EnableSwagger2
-public class JwtAuthorizationServerApplication {
+@SpringBootApplication
+public class RegistrationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JwtAuthorizationServerApplication.class, args);
+        SpringApplication.run( RegistrationApplication.class, args);
     }
-
 }
