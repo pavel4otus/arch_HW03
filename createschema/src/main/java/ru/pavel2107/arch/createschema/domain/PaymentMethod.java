@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table( name = "payment_method")
@@ -23,4 +25,9 @@ public class PaymentMethod {
 
     @Column( name = "payment_url")
     private String paymentUrl;
+
+    //@OneToMany( mappedBy = "paymentMethod")
+    //private Set<PaymentMethod> orders = new HashSet<>();
+
 }
+

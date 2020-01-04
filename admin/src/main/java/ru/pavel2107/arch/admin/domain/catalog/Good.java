@@ -27,15 +27,8 @@ public class Good {
     @Column( name = "description")
     private String description;
 
-    @Column( name = "smallPictureUrl")
-    private String smallPictureUrl;
-
-    @Column( name = "largePictureUrl")
-    private String largePictureUrl;
-
-
     @ManyToOne
-    @JoinColumn( name = "categroy_id")
+    @JoinColumn( name = "category_id")
     private Category category;
 
     @ManyToOne
@@ -49,5 +42,4 @@ public class Good {
             inverseJoinColumns = { @JoinColumn( name = "warehouse_id") }
     )
     private Set<WareHouse> wareHouses = new HashSet<>();
-
 }

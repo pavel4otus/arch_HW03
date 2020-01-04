@@ -14,11 +14,9 @@ public class CustomTokenEnhancer implements TokenEnhancer {
 
     private UserDetailsService userDetailsService;
 
-    //@Autowired
     public CustomTokenEnhancer( UserDetailsService userDetailsService){
         this.userDetailsService = userDetailsService;
     }
-
 
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {

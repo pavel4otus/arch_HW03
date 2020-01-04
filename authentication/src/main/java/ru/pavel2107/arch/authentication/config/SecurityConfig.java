@@ -28,7 +28,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.dataSource = dataSource;
     }
 
-
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService())
@@ -42,8 +41,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy( SessionCreationPolicy.STATELESS)
                 .and()
                 .exceptionHandling().authenticationEntryPoint( (req, resp, e) -> resp.sendError( HttpServletResponse.SC_UNAUTHORIZED));
-
-
     }
 
     @Bean
@@ -63,5 +60,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
        ((JdbcDaoImpl) userDetailsService).setDataSource(dataSource);
        return userDetailsService;
     }
-
 }

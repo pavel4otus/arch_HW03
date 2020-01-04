@@ -36,6 +36,18 @@
         <version>2.9.2</version>
     </dependency>
 
+    <!-- email -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
+
+    <!-- sms -->
+    <dependency>
+        <groupId>com.twilio.sdk</groupId>
+        <artifactId>twilio</artifactId>
+        <version>7.20.0</version>
+    </dependency>
 
     <!-- Spring Security OAuth2 and JWT -->
     <dependency>

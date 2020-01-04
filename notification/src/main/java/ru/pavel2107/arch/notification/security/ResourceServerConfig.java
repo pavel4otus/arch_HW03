@@ -1,5 +1,6 @@
 package ru.pavel2107.arch.notification.security;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -18,6 +19,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
+	@Value( "${app.jwt.signingkey}")
+	private String jwtSigningKey;
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -27,7 +31,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers( "/microservices/v1/notification/**").authenticated()
+				.antMatchers( "/microservices/v1/notification/**").hasRole("ADMIN")
 				.anyRequest().permitAll();
 	}
 
@@ -44,7 +48,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-		converter.setSigningKey("123"); // symmetric key
+		converter.setSigningKey( jwtSigningKey); // symmetric key
 		return converter;
 	}
 

@@ -28,8 +28,8 @@ public class WareHouse {
     @Column( name = "schedule")
     private String schedule;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    private Address address;
+    @Column( name = "address")
+    private String address;
 
     @ManyToMany( mappedBy = "wareHouses")
     @JsonIgnore

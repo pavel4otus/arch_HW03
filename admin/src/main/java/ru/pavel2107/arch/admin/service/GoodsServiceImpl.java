@@ -20,6 +20,19 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    public Good save(Good good) {
+        return repository.save( good);
+    }
+
+    @Override
+    public void delete(Long id) {
+        Good good = find( id);
+        if( good != null){
+            repository.delete( good);
+        }
+    }
+
+    @Override
     public Good find(Long id) {
         return repository.findById( id).orElse( null);
     }
@@ -27,16 +40,6 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<Good> findByName(String name) {
         return repository.findByName( name);
-    }
-
-    @Override
-    public List<Good> findByCategory(Category category) {
-        return repository.findByCategory( category);
-    }
-
-    @Override
-    public List<Good> findByBrand(Brand brand) {
-        return repository.findByBrand( brand);
     }
 
     @Override

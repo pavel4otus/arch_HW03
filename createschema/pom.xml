@@ -10,7 +10,7 @@
     </parent>
     <groupId>ru.pavel2107.arch</groupId>
     <artifactId>createschema</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>2.2.1.RELEASE</version>
     <name>createschema</name>
     <description>Demo project for Spring Boot</description>
 

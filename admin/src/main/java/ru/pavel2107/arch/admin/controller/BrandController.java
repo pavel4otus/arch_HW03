@@ -37,7 +37,8 @@ public class BrandController {
 
     @PostMapping( value = "microservices/v1/admin/brands", produces = MediaType.APPLICATION_JSON_VALUE)
     public Brand save( @RequestBody Brand brand){
-        return brandService.save( brand);
+        Brand b = brandService.save( brand);
+        return b;
     }
 }
 

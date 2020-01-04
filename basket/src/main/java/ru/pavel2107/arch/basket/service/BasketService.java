@@ -9,7 +9,7 @@ import ru.pavel2107.arch.basket.domain.User;
 public interface BasketService {
     Order findBasket( User user);
     Order save(Order order);
-    boolean addToBasket( User user, Good good, Integer count);
-    boolean removeFromBasket( User user, Good good, Integer count);
+    Order addToBasket( User user, Good good, Integer count);
+    Order removeFromBasket( User user, Good good, Integer count);
     void clearBasket( User user);
 }

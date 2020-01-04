@@ -6,11 +6,12 @@ import org.springframework.web.bind.annotation.*;
 import ru.pavel2107.arch.admin.domain.user.User;
 import ru.pavel2107.arch.admin.service.UserService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
+@Transactional
 public class UserController {
-
 
     private UserService service;
 
@@ -32,7 +33,7 @@ public class UserController {
         return user;
     }
 
-    @GetMapping( value = "microservices/v1/admint/users/findByEmail", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping( value = "microservices/v1/admin/users/findByEmail", produces = MediaType.APPLICATION_JSON_VALUE)
     public User findByEmail( @RequestParam( name = "email") String email ){
         return service.findByEmail( email);
     }
@@ -43,25 +44,29 @@ public class UserController {
     }
 
     @GetMapping( value = "microservices/v1/admin/users/findByFio", produces = MediaType.APPLICATION_JSON_VALUE)
-    public User findByFio( @RequestParam( name = "fio") String fio){
-        return service.findByEmail( fio);
+    public List<User> findByFio( @RequestParam( name = "fio") String fio){
+        return service.findByFio( fio);
     }
 
-    @PutMapping( value = "microservices/v1/admin/users/disable", produces = MediaType.APPLICATION_JSON_VALUE)
-    public User disable( @RequestBody User user){
+    @PutMapping( value = "microservices/v1/admin/users/disable/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public User disable( @PathVariable( value = "id") Long id){
+        User user = service.find( id);
          service.disable( user);
-         return service.find( user.getId());
+         user = service.save( user);
+         return user;
     }
 
-    @PutMapping( value = "microservices/v1/admin/users/enable", produces = MediaType.APPLICATION_JSON_VALUE)
-    public User enable( @RequestBody User user){
+    @PutMapping( value = "microservices/v1/admin/users/enable/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public User enable(  @PathVariable( value = "id") Long id){
+        User user = service.find( id);
         service.enable( user);
-        return service.find( user.getId());
+        user = service.save( user);
+        return user;
     }
 
     @PutMapping( value = "microservices/v1/admin/user", produces = MediaType.APPLICATION_JSON_VALUE)
     public User updateExisting( @RequestBody User user) throws Exception{
-        User newUser = service.updateExisting( user);
-        return newUser;
+        user = service.updateExisting( user);
+        return user;
     }
 }

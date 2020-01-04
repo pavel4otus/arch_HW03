@@ -21,11 +21,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User registerNewUser(User user) throws Exception {
-        return repository.save( user);
+        user.setRole( "ROLE_USER");
+        user =repository.save( user);
+        return user;
     }
 
     @Override
     public User updateExisting(User user) throws Exception {
-        return repository.save( user);
+        user = repository.save( user);
+        return user;
     }
 }

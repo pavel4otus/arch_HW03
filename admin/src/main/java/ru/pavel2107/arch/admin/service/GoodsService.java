@@ -7,10 +7,10 @@ import ru.pavel2107.arch.admin.domain.catalog.Good;
 import java.util.List;
 
 public interface GoodsService {
-    Good find(Long id);
-    List<Good> findByName(String name);
-    List<Good> findByCategory(Category category);
-    List<Good> findByBrand(Brand brand);
-    Good findBySkud(Long skud);
+    Good save( Good good);
+    void delete( Long id);
+    Good find( Long id);
+    List<Good> findByName( String name);
+    Good findBySkud( Long skud);
     List<Good> findAll();
 }

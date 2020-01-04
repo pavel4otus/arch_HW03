@@ -19,19 +19,22 @@ public class Order {
     @Column( name = "id")
     private Long id;
 
-
     @ManyToOne
     @JoinColumn( name = "user_id")
     @JsonBackReference
     private User user;
 
-    @OneToOne
-    private Address deliveryAddress;
+    @Column( name = "delivery_address")
+    private String deliveryAddress;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn( name = "payment_method_id")
+    @JsonBackReference
     private PaymentMethod paymentMethod;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn( name = "delivery_method_id")
+    @JsonBackReference
     private DeliveryMethod deliveryMethod;
 
     @OneToMany( mappedBy = "order", fetch = FetchType.LAZY)
@@ -39,6 +42,4 @@ public class Order {
 
     @OneToMany( mappedBy = "order", fetch = FetchType.LAZY)
     private Set<OrderItem> items = new HashSet<>();
-
-
 }

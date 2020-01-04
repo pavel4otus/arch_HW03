@@ -30,7 +30,7 @@ public class User {
     @Column( name = "phone")
     private String phone;
 
-    @Column( name = "active")
+    @Column( name = "enabled")
     private Boolean active;
 
     @Column( name = "role")

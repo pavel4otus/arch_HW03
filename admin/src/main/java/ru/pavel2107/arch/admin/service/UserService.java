@@ -13,6 +13,6 @@ public interface UserService {
     User find(Long id);
     List<User> findByFio(String fio);
     List<User> findByPhone( String phone);
-
+    User save( User user);
     List<User > findAll();
 }

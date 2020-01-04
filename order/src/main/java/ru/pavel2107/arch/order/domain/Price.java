@@ -17,7 +17,8 @@ public class Price {
     @Column( name = "id")
     private Long id;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn( name = "good_id")
     private Good good;
 
     @ManyToOne
@@ -30,7 +31,8 @@ public class Price {
     @Column( name = "dateTo")
     private LocalDate dateTo;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn( name = "warehouse_id")
     private WareHouse wareHouse;
 
     @Column( name = "price")

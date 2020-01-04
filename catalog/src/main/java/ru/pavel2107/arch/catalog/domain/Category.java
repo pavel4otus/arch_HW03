@@ -22,8 +22,10 @@ public class Category {
     @Column( name = "name")
     private String name;
 
+    @Column( name = "code")
+    String code;
+
     @OneToMany( mappedBy = "category", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Good> goods = new HashSet<>();
-
 }

@@ -27,18 +27,13 @@ public class Good {
     @Column( name = "description")
     private String description;
 
-    @Column( name = "smallpictureurl")
-    private String smallPictureUrl;
+    @ManyToOne
+    @JoinColumn( name = "category_id")
+    private Category category;
 
-    @Column( name = "largepictureurl")
-    private String largePictureUrl;
-
-
-    @Column( name = "category_id")
-    private Long category_id;
-
-    @Column( name = "brand_id")
-    private Long brand_id;
+    @ManyToOne
+    @JoinColumn( name = "brand_id")
+    private Brand brand;
 
     @ManyToMany( cascade ={ CascadeType.ALL})
     @JoinTable(
@@ -47,5 +42,4 @@ public class Good {
             inverseJoinColumns = { @JoinColumn( name = "warehouse_id") }
     )
     private Set<WareHouse> wareHouses = new HashSet<>();
-
 }

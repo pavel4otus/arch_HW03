@@ -11,6 +11,7 @@ import ru.pavel2107.arch.catalog.service.BrandService;
 import ru.pavel2107.arch.catalog.service.CategoryService;
 import ru.pavel2107.arch.catalog.service.GoodsService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -33,23 +34,23 @@ public class CatalogController {
         return  list;
     }
 
-    @GetMapping( value = "/microservices/v1/catalog/categories", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Category> getCategories(){
-        List <Category> list = categoryService.findAll();
-        return  list;
-    }
-
     @GetMapping( value = "/microservices/v1/catalog/bycategory", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<GoodDto> listGoodsByCategory(@RequestParam Long categoryId){
         Category category = categoryService.findById( categoryId);
-        List <GoodDto> list = goodsService.findByCategory( category);
+        List <GoodDto> list = new ArrayList<>();
+        if( category.getId() != null) {
+            list = goodsService.findByCategory(category);
+        }
         return  list;
     }
 
     @GetMapping( value = "/microservices/v1/catalog/bybrand", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<GoodDto> listGoodsByBrand(@RequestParam Long brandId){
         Brand brand = brandService.findById( brandId);
-        List <GoodDto> list = goodsService.findByBrand( brand);
+        List <GoodDto> list = new ArrayList<>();
+        if( brand.getId() != null) {
+            list = goodsService.findByBrand(brand);
+        }
         return  list;
     }
 

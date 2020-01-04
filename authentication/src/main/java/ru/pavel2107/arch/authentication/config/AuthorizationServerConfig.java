@@ -27,17 +27,11 @@ import java.util.Arrays;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-//    @Autowired
-//    @Qualifier("authenticationManagerBean")
-//    private AuthenticationManager authenticationManager;
-
-
     private  DataSource dataSource;
     private PasswordEncoder passwordEncoder;
     private AuthenticationManager authenticationManager;
     private SecurityProperties securityProperties;
     private UserDetailsService userDetailsService;
-
 
     @Autowired
     public AuthorizationServerConfig(final DataSource dataSource, final PasswordEncoder passwordEncoder,
@@ -50,7 +44,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         this.userDetailsService = userDetailsService;
     }
 
-
     @Override
    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         final TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
@@ -58,7 +51,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
         endpoints
                 .tokenStore(tokenStore())
-                .accessTokenConverter(accessTokenConverter()) // added for JWT
+                .accessTokenConverter(accessTokenConverter())
                 .tokenEnhancer( tokenEnhancerChain)
                 .authenticationManager(authenticationManager);
     }
@@ -77,7 +70,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Bean
     public TokenStore tokenStore() {
-        return new JwtTokenStore(accessTokenConverter()); // For JWT. Use in-memory, jdbc, or other if not JWT
+        return new JwtTokenStore(accessTokenConverter());
     }
 
     @Bean
@@ -95,10 +88,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return defaultTokenServices;
     }
 
-
     @Bean
     public TokenEnhancer tokenEnhancer() {
         return new CustomTokenEnhancer( userDetailsService);
     }
-
 }

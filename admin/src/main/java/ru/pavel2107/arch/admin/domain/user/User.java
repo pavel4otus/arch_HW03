@@ -31,11 +31,14 @@ public class User {
     @Column( name = "phone")
     private String phone;
 
-    @Column( name = "enable")
+    @Column( name = "enabled")
     private Boolean active;
 
     @Column( name = "role")
     private String role;
+
+    @Column( name = "address")
+    private String address;
 
     @OneToMany( mappedBy = "user")
     private Set<Order> orders = new HashSet<>();

@@ -17,26 +17,37 @@ public class BrandServiceImpl implements BrandService {
         this.repository = repository;
     }
 
-    @Override
-    public List<Brand> findAll() {
-        return repository.findAll();
-    }
-
-    @Override
-    public Brand findById(Long id) {
-        return repository.findById( id).orElse( new Brand());
-    }
-
-    @Override
-    public void delete(Long id) {
-        Brand brand = repository.findById( id).orElse( null);
-        if( brand != null) {
-            repository.delete(brand);
-        }
-    }
 
     @Override
     public Brand save(Brand brand) {
         return repository.save( brand);
+    }
+
+    @Override
+    public void delete(Long id) {
+        Brand brand = find( id);
+        if( brand != null){
+            repository.delete( brand);
+        }
+    }
+
+    @Override
+    public List<Brand> findByName(String name) {
+        return repository.findByName( name);
+    }
+
+    @Override
+    public Brand find(Long id) {
+        return repository.findById( id).orElse( null);
+    }
+
+    @Override
+    public Brand findByCode(String code) {
+        return repository.findByCode( code);
+    }
+
+    @Override
+    public List<Brand> findAll() {
+        return repository.findAll();
     }
 }

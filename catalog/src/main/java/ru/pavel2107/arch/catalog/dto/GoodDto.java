@@ -19,8 +19,6 @@ public class GoodDto {
     private Long skud;
     private String name;
     private String description;
-    private String smallPictureUrl;
-    private String largePictureUrl;
     private Category category;
     private Brand brand;
     private Set<WareHouse> wareHouses = new HashSet<>();

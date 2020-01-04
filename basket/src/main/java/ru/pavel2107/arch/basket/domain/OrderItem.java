@@ -1,33 +1,40 @@
 package ru.pavel2107.arch.basket.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table( name = "order_items")
-@Data
 @NoArgsConstructor
 public class OrderItem {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     @Column( name = "id")
+    @Getter
+    @Setter
     private Long id;
 
     @ManyToOne
     @JoinColumn( name = "order_id")
+    @JsonIgnore
+    @ToString.Exclude
+    @Getter @Setter
     private Order order;
 
     @Column( name = "quantity")
+    @Getter @Setter
     private Integer quantity;
 
     @Column( name = "price")
+    @Getter @Setter
     private Double price;
 
     @ManyToOne
     @JoinColumn( name = "good_id")
+    @Getter @Setter
     private Good good;
 
     public OrderItem( Order order, Good good ){
@@ -36,5 +43,14 @@ public class OrderItem {
         this.quantity = 0;
         this.price = 0d;
         this.good = good;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
     }
 }
