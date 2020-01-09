@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -19,6 +20,13 @@ public class ConfigServerApplication {
     @Bean
     public WebSecurityConfigurerAdapter configurerAdapter(ServerProperties serverProperties){
         return new WebSecurityConfigurerAdapter() {
+
+            @Override
+            public void configure(WebSecurity webSecurity){
+                webSecurity.ignoring().antMatchers( "/actuator/health");
+            }
+
+
             @Override
             protected void configure(HttpSecurity httpSecurity) throws Exception {
                 super.configure( httpSecurity);

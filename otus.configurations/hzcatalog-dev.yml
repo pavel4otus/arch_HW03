@@ -1,0 +1,43 @@
+spring:
+  main:
+    banner-mode: "off"
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+  application:
+    name: hzcatalog
+
+
+server:
+  port: 8090
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, env, loggers, logfile, metrics
+  endpoint:
+    shutdown:
+      enabled: true
+
+app:
+  jwt:
+    signingkey: 123
+  brands:
+    url: http://localhost:8082/microservices/v1/catalog/brands
+    ttl: 60
+  categories:
+    url: http://localhost:8082/microservices/v1/catalog/categories
+    ttl: 60
+  warehouses:
+    url: http://localhost:8082/microservices/v1/catalog/warehouses
+    ttl: 5
+  catalog:
+    url: http://localhost:8082/microservices/v2/catalog
+    ttl: 30
+
+
+

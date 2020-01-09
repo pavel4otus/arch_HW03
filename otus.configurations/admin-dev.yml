@@ -1,0 +1,42 @@
+spring:
+  main:
+    banner-mode: "off"
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+  application:
+    name: admin
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/eshop
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+    username: postgres
+    password: postgres
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, env, loggers, logfile, metrics
+  endpoint:
+    shutdown:
+      enabled: true
+
+app:
+  jwt:
+    signingkey: 123

@@ -1,0 +1,29 @@
+spring:
+  main:
+    banner-mode: "off"
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  data:
+    mongodb:
+      host: localhost
+      database: chat
+      port: 27017
+
+server:
+  port: 8088
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, env, loggers, logfile, metrics
+  endpoint:
+    shutdown:
+      enabled: true
+
+app:
+  jwt:
+    signingkey: 123
